@@ -1,4 +1,5 @@
 
+
 class Flervalgssporsmaal:
     
     def __init__(self, sporsmaal, valg, riktig_svar):
@@ -63,6 +64,9 @@ if __name__ == "__main__":
         else:
             print("Feil!")
     print(f"{riktig_svar} riktige av {len(sporsmaalene)}.")
+    
+    
+    
     
     
     
