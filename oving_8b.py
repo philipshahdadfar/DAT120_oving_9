@@ -36,23 +36,11 @@ class Flervalgssporsmaal:
         return tekst
     
     def korrekt_svar_tekst(self):
-        tekst = "Korrekt svar!"
+        tekst = f"Korrekt svar: {self.valg[self.__riktig_svar]}"
         
         return tekst
         
-        
-        
-
-
     
-    
-    
-
-        
-
-        
-    
-   
 
 
 
@@ -95,17 +83,36 @@ def lag_sporsmaal():
 
 if __name__ == "__main__":
     sporsmaalene = lag_sporsmaal()
-    riktig_svar = 0
+    riktig_svar1 = 0
+    riktig_svar2 = 0
+
     for sporsmaal in sporsmaalene:
         print(sporsmaal)
-        svar = input("Skriv inn svaret ditt: ")
-        svar = int(svar)
-        if sporsmaal.sjekk_svar(svar):
-            print("Riktig!\n")
-            riktig_svar += 1
+     
+        spiller1 = input("Spiller 1: ")
+        spiller2 = input("Spiller 2: ")
+        spiller1 = int(spiller1)
+        spiller2 = int(spiller2)
+        
+        if sporsmaal.sjekk_svar(spiller1):
+            print("Spiller 1: Riktig!\n")
+            riktig_svar1 += 1
         else:
-            print("Feil!")
-    print(f"{riktig_svar} riktige av {len(sporsmaalene)}.")
+            print("Spiller 1: Feil!\n")
+            
+        if sporsmaal.sjekk_svar(spiller2):
+            print("Spiller 2: Riktig!\n")
+            riktig_svar2 += 1
+            print(sporsmaal.korrekt_svar_tekst() + "\n")
+            
+        else:
+            print("Spiller 2: Feil!\n")
+            print(sporsmaal.korrekt_svar_tekst() + "\n")
+            
+        
+            
+    print(f"Spiller 1 har {riktig_svar1} riktige av {len(sporsmaalene)} mulige.")
+    print(f"Spiller 2 har {riktig_svar2} riktige av {len(sporsmaalene)} mulige.")
 
 
     
