@@ -17,9 +17,7 @@ class Flervalgssporsmaal:
     def riktig_svar(self):
         return self.__riktig_svar
   
-
-    
-    
+ ##########################################################   
     def sjekk_svar(self, svaret):
         if svaret == self.riktig_svar:
             return True
@@ -39,12 +37,9 @@ class Flervalgssporsmaal:
         tekst = f"Korrekt svar: {self.valg[self.__riktig_svar]}"
         
         return tekst
-        
+
+#############################################################
     
-
-
-
-
 def lag_sporsmaal():
     sporsmaalene = []
     
@@ -72,15 +67,10 @@ def lag_sporsmaal():
     
     
         sporsmaalene.append(Flervalgssporsmaal(question, answer, opt1))
-    
-    
-    
+
     return sporsmaalene
 
-
-
-
-
+############################################################
 if __name__ == "__main__":
     sporsmaalene = lag_sporsmaal()
     riktig_svar1 = 0
@@ -88,7 +78,6 @@ if __name__ == "__main__":
 
     for sporsmaal in sporsmaalene:
         print(sporsmaal)
-     
         spiller1 = input("Spiller 1: ")
         spiller2 = input("Spiller 2: ")
         spiller1 = int(spiller1)
@@ -104,39 +93,9 @@ if __name__ == "__main__":
             print("Spiller 2: Riktig!\n")
             riktig_svar2 += 1
             print(sporsmaal.korrekt_svar_tekst() + "\n")
-            
         else:
             print("Spiller 2: Feil!\n")
             print(sporsmaal.korrekt_svar_tekst() + "\n")
-            
-        
-            
     print(f"Spiller 1 har {riktig_svar1} riktige av {len(sporsmaalene)} mulige.")
     print(f"Spiller 2 har {riktig_svar2} riktige av {len(sporsmaalene)} mulige.")
-
-
-    
-        
-   
-        
-
-
-
-  
-
-        
-    
-       
-        
-    
-        
-        
-        
-        
-        
-        
-       
-                    
-      
-    
-    
+    ################################################################
